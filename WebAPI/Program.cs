@@ -1,6 +1,11 @@
 using Application;
+using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+    
+ConfigurationManager configuration = builder.Configuration;
+
+IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
 
@@ -11,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 // Al hacer WebAPI una referencia a la capa Application, podemos llamar a los servicios de ServiceExtensions
 builder.Services.AddApplicationLayer();
+builder.Services.AddPersistenceInfraestructure(configuration);
 
 var app = builder.Build();
 
