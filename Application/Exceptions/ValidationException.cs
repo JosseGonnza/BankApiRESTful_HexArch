@@ -20,7 +20,7 @@ namespace Application.Exceptions
         {
             foreach (var failure in failures)
             {
-                Errors.Add(failure.ErrorMessage)
+                Errors.Add(failure.ErrorMessage);
             }
         }
     }

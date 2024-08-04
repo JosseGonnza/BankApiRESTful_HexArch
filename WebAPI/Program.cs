@@ -1,5 +1,6 @@
 using Application;
 using Persistence;
+using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
     
@@ -16,6 +17,7 @@ builder.Services.AddSwaggerGen();
 
 // Al hacer WebAPI una referencia a la capa Application, podemos llamar a los servicios de ServiceExtensions
 builder.Services.AddApplicationLayer();
+builder.Services.AddShareInfraestructure(configuration);
 builder.Services.AddPersistenceInfraestructure(configuration);
 
 var app = builder.Build();

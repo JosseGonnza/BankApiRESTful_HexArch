@@ -12,7 +12,7 @@ namespace Domain.Entities
         public string Email { get; set; }
         public string Address { get; set; }
 
-        public int age
+        public int Age
         {
             get
             {
