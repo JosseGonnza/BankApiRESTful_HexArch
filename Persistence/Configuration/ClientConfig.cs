@@ -31,7 +31,7 @@ namespace Persistence.Configuration
                 .HasMaxLength(100);
 
             builder.Property(p => p.Address)
-                .HasMaxLength(12)
+                .HasMaxLength(120)
                 .IsRequired();
 
             builder.Property(p => p.Age);
