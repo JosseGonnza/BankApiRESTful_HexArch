@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers.v1
 {
-    [ApiVersion("1.0")]
+    [ApiVersion(Versions.V1)]
     public class ClientsController : BaseApiController
     {
         // POST api/<controller>
