@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Application.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +24,11 @@ namespace Application
             // Los servicios que creo dentro, pueden ser llamados desde WebAPI por AddApplicationLayer
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssemblies(assemblies.ToArray());
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>), ServiceLifetime.Scoped);
+            });
 
             return services;
         }

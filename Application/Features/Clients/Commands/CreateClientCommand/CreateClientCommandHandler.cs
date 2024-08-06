@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Features.Clients.Commands.CreateClientCommand;
 
-public class CreateClientCommandHandler : IRequestHandler<CreateClientRequest, Unit>
+public class CreateClientCommandHandler : IRequestHandler<CreateClientRequest>
 {
     // Ayuda a mapear automaticamente
     private readonly IRepositoryAsync<Client> _repositoryAsync;
@@ -17,11 +17,9 @@ public class CreateClientCommandHandler : IRequestHandler<CreateClientRequest, U
         _mapper = mapper;
     }
 
-    public async Task<Unit> Handle(CreateClientRequest request, CancellationToken cancellationToken)
+    public async Task Handle(CreateClientRequest request, CancellationToken cancellationToken)
     {
         var newRecord = _mapper.Map<Client>(request);
         await _repositoryAsync.AddAsync(newRecord, cancellationToken);
-        
-        return Unit.Value;
     }
 }
