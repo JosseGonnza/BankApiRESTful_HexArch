@@ -12,29 +12,29 @@ namespace Persistence.Configuration
 
             builder.HasKey(p => p.Id);
 
-            builder.Property(p => p.Name)
+            builder.Property(p => p.Nombre)
                 .HasMaxLength(80)
                 .IsRequired();
 
-            builder.Property(p => p.LastName)
+            builder.Property(p => p.Apellido)
                 .HasMaxLength(80)
                 .IsRequired();
 
-            builder.Property(p => p.DateOfBirth)
+            builder.Property(p => p.FechaNacimiento)
                 .IsRequired();
 
-            builder.Property(p => p.PhoneNumber)
+            builder.Property(p => p.Telefono)
                 .HasMaxLength(9)
                 .IsRequired();
 
             builder.Property(p => p.Email)
                 .HasMaxLength(100);
 
-            builder.Property(p => p.Address)
+            builder.Property(p => p.Direccion)
                 .HasMaxLength(120)
                 .IsRequired();
 
-            builder.Property(p => p.Age);
+            builder.Property(p => p.Edad);
 
             builder.Property(p => p.CreatedBy)
                 .HasMaxLength(30);
