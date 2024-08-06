@@ -1,9 +1,8 @@
-﻿using Application.Wrappers;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Features.Clients.Commands.CreateClientCommand
 {
-    public class CreateClientCommand : IRequest<Response<int>>
+    public class CreateClientRequest : IRequest
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }

@@ -17,10 +17,10 @@ namespace WebAPI.Controllers.v1
 
         // POST api/<controller>
         [HttpPost]
-        public async Task<IActionResult> Post(CreateClientCommand command, CancellationToken cancellationToken)
+        public async Task<IActionResult> Post(CreateClientRequest request, CancellationToken cancellationToken)
         {
             // El controlador se encarga solo de enrutar, toda la lógica se queda en el Core
-            await mediator.Send(command, cancellationToken).ConfigureAwait(false);
+            await mediator.Send(request, cancellationToken).ConfigureAwait(false);
             return Ok();
         }
     }
