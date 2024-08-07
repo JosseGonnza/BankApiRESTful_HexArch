@@ -10,7 +10,7 @@ namespace Application.Mappings
         {
             #region Commands
             // Se encarga de mapear automaticamente las pripiedades de CreateClientCommand a Client 
-            CreateMap<CreateClientCommand, Client>();
+            CreateMap<CreateClientRequest, Client>();
             #endregion
         }
     }

@@ -11,6 +11,7 @@ IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
 
+builder.Services.AddApiVersion();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

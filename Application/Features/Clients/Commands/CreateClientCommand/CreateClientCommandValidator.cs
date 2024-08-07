@@ -2,7 +2,7 @@
 
 namespace Application.Features.Clients.Commands.CreateClientCommand
 {
-    public class CreateClientCommandValidator : AbstractValidator<CreateClientCommand>
+    public class CreateClientCommandValidator : AbstractValidator<CreateClientRequest>
     {
         public CreateClientCommandValidator()
         {
@@ -20,7 +20,7 @@ namespace Application.Features.Clients.Commands.CreateClientCommand
             RuleFor(p => p.Telefono)
                 .NotEmpty().WithMessage("{PropertyName} no puede estar vacío.")
                 .Matches(@"^\d{3}-\d{3}-\d{3}$").WithMessage("{PropertyName} debe cumplir el formato 000-000-000.")
-                .MaximumLength(9).WithMessage("{PropertyName} no puede exceder de {MaxLength} caracteres.");
+                .MaximumLength(11).WithMessage("{PropertyName} no puede exceder de {MaxLength} caracteres.");
 
             RuleFor(p => p.Email)
                 .NotEmpty().WithMessage("{PropertyName} no puede estar vacío.")
