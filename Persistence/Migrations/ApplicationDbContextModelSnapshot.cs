@@ -32,8 +32,8 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<int>("Age")
                         .HasColumnType("int");

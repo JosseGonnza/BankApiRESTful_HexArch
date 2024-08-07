@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class MyFirstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,7 @@ namespace Persistence.Migrations
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
